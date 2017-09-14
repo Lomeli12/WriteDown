@@ -21,6 +21,8 @@ HTML super quickly and handles GitHub-flavor Markdown and emoji shortnames
 for me.
 * [MDITabControl](https://www.codeproject.com/Articles/16436/A-highly-configurable-MDI-tab-control-from-scratch) -
 The best customizable tab control for DotNet out there.
+* [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) - Used to 
+serialize/deserialize themes and configs.
 * [WriteDown - Guard Edition](https://github.com/Guard13007/WriteDown) -
 My friend's attempt at a Markdown editor, but written in 
 [Electron](https://electron.atom.io/) and Cross-Platform. I came up with the
