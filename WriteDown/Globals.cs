@@ -5,6 +5,7 @@ using CefSharp;
 
 namespace WriteDown {
     class Globals {
+        public static SyntaxTheme LEXER_THEME = new SyntaxTheme();
         public static readonly string HTML_HEAD =
             "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\">" +
             "<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}\"></head><body>";

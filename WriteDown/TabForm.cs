@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
 using Markdig;
+using ScintillaNET;
 
 namespace WriteDown {
     public partial class TabForm : Form {
@@ -30,6 +32,7 @@ namespace WriteDown {
             Globals.createTempFolder();
             InitializeComponent();
             initializeChromium();
+            Globals.LEXER_THEME.applySyntaxTheme(editor);
         }
 
         public void initializeChromium() {
