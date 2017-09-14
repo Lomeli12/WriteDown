@@ -52,13 +52,13 @@
             this.editor.TabIndex = 0;
             this.editor.TextChanged += new System.EventHandler(this.editor_TextChanged);
             // 
-            // NewTab
+            // TabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 534);
             this.Controls.Add(this.layoutPanel);
-            this.Name = "NewTab";
+            this.Name = "TabForm";
             this.Text = "NewTab";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.tab_FormClosed);
             this.Load += new System.EventHandler(this.tab_Load);
