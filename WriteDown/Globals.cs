@@ -9,13 +9,13 @@ namespace WriteDown {
             "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\">" +
             "<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}\"></head><body>";
         public static readonly string HTML_END = "</body></html>";
-        public static readonly string THEME_FOLDER =
-            Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase, "themes");
+        public static readonly string APP_PATH = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
+        public static readonly string THEME_FOLDER = Path.Combine(APP_PATH, "themes");
         public static readonly string DARKLY_THEME = Path.Combine(THEME_FOLDER, "darkly");
         public static readonly string FLATLY_THEME = Path.Combine(THEME_FOLDER, "flatly");
         public static readonly string DARKLY_CSS = Path.Combine(DARKLY_THEME, "bootstrap.min.css");
         public static readonly string FLATLY_CSS = Path.Combine(FLATLY_THEME, "bootstrap.min.css");
-        public static bool DARK_MODE = false;
+        public static bool DARK_MODE = true;
         public static int tabCount;
         public static readonly MarkdownPipeline pipeline =
             new MarkdownPipelineBuilder().UseEmojiAndSmiley().UseAdvancedExtensions().Build();
