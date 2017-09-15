@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows.Forms;
 using Markdig;
 using CefSharp;
 
@@ -8,8 +9,8 @@ namespace WriteDown {
         public static SyntaxTheme LEXER_THEME = new SyntaxTheme();
         public static readonly string HTML_HEAD =
             "<!DOCTYPE html>\n<html lang=\"en\">\n<head><meta charset=\"utf-8\">" +
-            "<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}\"></head><body>";
-        public static readonly string HTML_END = "</body></html>";
+            "<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}\"></head><body><div class=\"container\">";
+        public static readonly string HTML_END = "</div></body></html>";
         public static readonly string APP_PATH = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
         public static readonly string THEME_FOLDER = Path.Combine(APP_PATH, "themes");
         public static readonly string DARKLY_THEME = Path.Combine(THEME_FOLDER, "darkly");
@@ -17,7 +18,6 @@ namespace WriteDown {
         public static readonly string DARKLY_CSS = Path.Combine(DARKLY_THEME, "bootstrap.min.css");
         public static readonly string FLATLY_CSS = Path.Combine(FLATLY_THEME, "bootstrap.min.css");
         public static bool DARK_MODE = true;
-        public static int tabCount;
         public static readonly MarkdownPipeline pipeline =
             new MarkdownPipelineBuilder().UseEmojiAndSmiley().UseAdvancedExtensions().Build();
         public static readonly char DIR_SEP = Path.DirectorySeparatorChar;
@@ -43,6 +43,11 @@ namespace WriteDown {
             settings.BrowserSubprocessPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
                 Environment.Is64BitProcess ? "x64" : "x86", "CefSharp.BrowserSubprocess.exe");
             Cef.Initialize(settings, performDependencyCheck: false, browserProcessHandler: null);
+        }
+
+        public static void safeExit() {
+            Cef.Shutdown();
+            Application.Exit();
         }
     }
 }

@@ -60,6 +60,7 @@
             this.Controls.Add(this.layoutPanel);
             this.Name = "TabForm";
             this.Text = "NewTab";
+            this.Icon = global::WriteDown.Properties.Resources.disk_icon;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.tab_FormClosed);
             this.Load += new System.EventHandler(this.tab_Load);
             this.layoutPanel.ResumeLayout(false);

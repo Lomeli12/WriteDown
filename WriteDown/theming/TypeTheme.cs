@@ -12,6 +12,8 @@ namespace WriteDown {
         public bool Bold { get; set; }
         public bool Italic { get; set; }
         public bool Underline { get; set; }
+        public bool FillLine { get; set;  }
+        public bool Hotspot { get; set; }
 
         public TypeTheme() { }
 
@@ -23,6 +25,8 @@ namespace WriteDown {
             Bold = parent.Bold;
             Italic = parent.Italic;
             Underline = parent.Underline;
+            FillLine = parent.FillLine;
+            Hotspot = parent.Hotspot;
         }
 
         public TypeTheme(Style parent) {
@@ -33,6 +37,8 @@ namespace WriteDown {
             Bold = parent.Bold;
             Italic = parent.Italic;
             Underline = parent.Underline;
+            FillLine = parent.FillLine;
+            Hotspot = parent.Hotspot;
         }
     }
 }
