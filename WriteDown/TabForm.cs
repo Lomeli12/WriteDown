@@ -73,14 +73,18 @@ namespace WriteDown {
                     }
                     if (Icon != Properties.Resources.disk_icon) Icon = Properties.Resources.disk_icon;
                 }
-            } else if (Icon != Properties.Resources.red_disk_icon) {
-                textChanged = true;
-                Icon = Properties.Resources.red_disk_icon;
+            } else {
+                if (Icon != Properties.Resources.red_disk_icon)
+                    Icon = Properties.Resources.red_disk_icon;
+                if (!textChanged)
                 parent.saveCount++;
+                textChanged = true;
             }
             writeTempFile();
             parent.setSaveButtonState(textChanged);
             parent.updateSaveAllState();
+            parent.charLengthLabel.Text = "Length: " + editor.Text.Length;
+            parent.lineNumLabel.Text = "Line(s): " + editor.Lines.Count;
         }
 
         private void tab_FormClosed(object sender, FormClosedEventArgs e) {
