@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using Markdig;
+using WriteDown.Themes;
 using CefSharp;
 
 namespace WriteDown {

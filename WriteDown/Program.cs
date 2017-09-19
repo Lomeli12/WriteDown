@@ -2,12 +2,15 @@
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using WriteDown.Themes;
+using WriteDown.Util;
 using Newtonsoft.Json;
 
 namespace WriteDown {
     static class Program {
         [STAThread]
         static void Main() {
+            Config.loadConfig();
             AppDomain.CurrentDomain.AssemblyResolve += resolver;
             var json = File.ReadAllText(Path.Combine(Globals.APP_PATH, "testtheme.json"));
             Globals.LEXER_THEME = JsonConvert.DeserializeObject<SyntaxTheme>(json);

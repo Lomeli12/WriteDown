@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace WriteDown {
+namespace WriteDown.Util {
     public class StringHexConverter : JsonConverter{
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
             if (value is int) {

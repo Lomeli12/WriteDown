@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
+using WriteDown.Util;
 using ScintillaNET;
 
-namespace WriteDown {
+namespace WriteDown.Themes {
     public class TypeTheme {
         public string Font { get; set; } = "Consolas";
         public int Size { get; set; } = 10;

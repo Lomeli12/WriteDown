@@ -2,10 +2,11 @@
 using System.Drawing;
 using System.IO;
 using ScintillaNET;
+using WriteDown.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace WriteDown {
+namespace WriteDown.Themes {
     public class SyntaxTheme {
         public enum LexerType {
             Default,
